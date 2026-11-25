@@ -441,7 +441,7 @@ void COSD::DrawMessage()
 		//m_MemDC.EndPath();
 		//m_MemDC.SelectClipPath(RGN_COPY);
 
-		// Background omitted: the bitmap is pre-filled with the transparent color key.
+		// Keep the video-mixer bitmap background transparent; only the message text is drawn.
 
 		UINT uFormat = DT_LEFT|DT_VCENTER|DT_NOPREFIX;
 
