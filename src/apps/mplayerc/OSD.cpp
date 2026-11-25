@@ -441,7 +441,7 @@ void COSD::DrawMessage()
 		//m_MemDC.EndPath();
 		//m_MemDC.SelectClipPath(RGN_COPY);
 
-		GradientFill(&m_MemDC, &rectMessages);
+		// Background omitted: the bitmap is pre-filled with the transparent color key.
 
 		UINT uFormat = DT_LEFT|DT_VCENTER|DT_NOPREFIX;
 
@@ -997,7 +997,8 @@ void COSD::DrawWnd()
 
 	mdc.SelectObject(m_MainFont);
 
-	GradientFill(&mdc, &rcBar);
+	// Use the layered-window color key instead of painting an OSD background.
+	mdc.FillSolidRect(&rcBar, RGB(255, 0, 255));
 
 	const UINT uFormat = DT_LEFT | DT_TOP | DT_END_ELLIPSIS | DT_NOPREFIX;
 
